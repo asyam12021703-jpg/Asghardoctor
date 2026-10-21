@@ -4,93 +4,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asghar Ali | Medical Portfolio</title>
+<meta name="theme-color" content="#071522">
+<meta name="description" content="Asghar Ijaz — MBBS student portfolio, education, research, achievements and community service.">
+<title>Asghar Ijaz | Medical Portfolio</title>
 <style>
-:root{--navy:#071b33;--teal:#27d3bd;--white:#f4f8fc}
-*{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:var(--navy);color:var(--white);line-height:1.7}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;position:sticky;top:0;background:#071b33ee;backdrop-filter:blur(12px);z-index:5}
-.logo{font-size:22px;font-weight:bold;color:var(--teal)}
-nav a{color:white;text-decoration:none;margin-left:15px;font-size:14px}
-.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;padding:70px 10%;background:radial-gradient(circle at 85% 25%,#14565d 0,transparent 35%)}
-.tag{color:var(--teal);letter-spacing:3px;font-size:13px}
-h1{font-size:clamp(42px,8vw,76px);line-height:1.12;margin:18px 0}
-h1 span,h2 span{color:var(--teal)}
-p{color:#c5d3e3}
-.hero p{max-width:600px;font-size:18px}
-.btn{display:inline-block;background:var(--teal);color:var(--navy);padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:bold;margin:12px 8px 0 0}
-section{padding:70px 10%}
-h2{font-size:34px;margin-top:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.card{padding:23px;border:1px solid #28435a;border-radius:15px;background:#102943;transition:.3s}
-.card:hover{transform:translateY(-7px);border-color:var(--teal)}
-.card h3{color:var(--teal);margin-top:0}
-.stat{font-size:28px;font-weight:bold;color:var(--teal)}
-footer{text-align:center;padding:30px;border-top:1px solid #28435a;color:#c5d3e3}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+:root{--bg:#071522;--panel:#0c2030;--panel2:#102b3c;--teal:#5eead4;--blue:#60a5fa;--white:#effaff;--muted:#a9c0ce;--line:#214153}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Arial,sans-serif;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,a{-webkit-tap-highlight-color:transparent}
+::selection{background:var(--teal);color:var(--bg)}
+#progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--blue));z-index:100}
+nav{position:sticky;top:0;z-index:50;background:#071522eF;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff10;padding:14px 7%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:23px;font-weight:850;letter-spacing:-1px}.brand span,.accent{color:var(--teal)}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:13px;color:var(--muted)}
+.navlinks a:hover{color:var(--teal)}
+.menu{display:none;border:1px solid var(--line);background:var(--panel);color:white;padding:8px 12px;border-radius:8px;font-size:19px}
+.hero{position:relative;min-height:88vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:35px;padding:85px 10%;overflow:hidden}
+.orb{position:absolute;width:300px;height:300px;right:-130px;top:5%;border-radius:50%;background:#14b8a61a;filter:blur(12px);pointer-events:none}
+.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);font-weight:800}
+h1{font-size:clamp(43px,7vw,78px);line-height:1.08;letter-spacing:-3px;margin:18px 0}
+h1 .name{background:linear-gradient(100deg,#fff 10%,var(--teal) 65%,var(--blue));color:transparent;background-clip:text;-webkit-background-clip:text}
+.role{font-size:clamp(17px,2vw,23px);color:var(--muted);min-height:38px}
+.hero p,.intro{max-width:620px;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:12px 18px;font-weight:750;font-size:14px;border:1px solid var(--line);transition:transform .25s,border-color .25s}
+.btn.primary{background:var(--teal);color:#062027;border-color:var(--teal)}
+.btn:hover{transform:translateY(-3px);border-color:var(--teal)}
+.portrait-wrap{display:grid;place-items:center;position:relative;min-height:350px;animation:float 6s ease-in-out infinite}
+.ring{width:min(320px,72vw);aspect-ratio:1;border-radius:50%;padding:8px;background:conic-gradient(from 0deg,var(--teal),transparent 28%,var(--blue),transparent 70%,var(--teal));animation:spin 12s linear infinite;box-shadow:0 0 60px #5eead41b}
+.portrait{height:100%;width:100%;border-radius:50%;overflow:hidden;border:5px solid var(--bg);background:radial-gradient(circle at 30% 20%,#1e5263,#10283a 65%);display:grid;place-items:center;position:relative}
+.portrait img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.photo-placeholder{text-align:center;padding:22px;color:var(--teal)}
+.photo-placeholder .symbol{font-size:78px;line-height:1.3}
+.photo-placeholder small{display:block;color:var(--muted);font-size:12px}
+.float-tag{position:absolute;padding:10px 14px;border:1px solid #5eead44a;background:#0b2435eF;backdrop-filter:blur(12px);border-radius:12px;font-size:12px;font-weight:700;box-shadow:0 10px 35px #0003}
+.tag-one{top:17%;left:0}.tag-two{bottom:17%;right:0}
+section{padding:85px 10%}
+.section-head{margin-bottom:32px}
+.section-head h2{font-size:clamp(30px,4vw,44px);letter-spacing:-1.5px;line-height:1.2;margin:9px 0}
+.section-head p{max-width:650px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.card{background:linear-gradient(145deg,#10283a,#0b1c2b);border:1px solid var(--line);border-radius:17px;padding:23px;transition:transform .3s,border-color .3s,box-shadow .3s;min-width:0}
+.card:hover{transform:translateY(-6px);border-color:#5eea4d77;box-shadow:0 16px 40px #0002}
+.card h3{margin:10px 0 5px;font-size:18px;line-height:1.4}
+.card p{margin:7px 0;color:var(--muted);font-size:14px;overflow-wrap:anywhere}
+.iconbox{width:43px;height:43px;border-radius:12px;background:#5eead417;color:var(--teal);display:grid;place-items:center;font-size:21px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{padding:24px 16px;text-align:center;border:1px solid var(--line);border-radius:15px;background:var(--panel)}
+.stat strong{display:block;color:var(--teal);font-size:clamp(25px,3vw,38px);line-height:1.4}
+.stat span{font-size:12px;color:var(--muted)}
+.timeline{display:grid;gap:16px}
+.edu{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:22px;border-left:2px solid var(--teal);background:var(--panel);border-radius:0 14px 14px 0}
+.year{font-size:13px;color:var(--teal);font-weight:800}
+.edu h3{margin:0;font-size:17px}.edu p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.pill{display:inline-block;font-size:11px;padding:5px 9px;border:1px solid #5eead44d;color:var(--teal);border-radius:30px;margin:5px 5px 0 0}
+.project-card{display:flex;flex-direction:column;min-height:210px}
+.project-card .more{margin-top:auto;padding-top:15px;color:var(--teal);font-size:12px;font-weight:800}
+.achievements{grid-template-columns:repeat(2,minmax(0,1fr))}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.contact-link{overflow-wrap:anywhere;color:var(--teal)}
+footer{padding:30px 7%;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:12px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.show{opacity:1;transform:translateY(0)}
-@media(max-width:600px){nav{padding:16px 5%;flex-wrap:wrap;gap:10px}nav a{margin-left:8px;font-size:12px}.hero,section{padding:55px 7%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes blink{50%{border-color:transparent}}
+@media(min-width:1200px){.hero{padding-left:12%;padding-right:12%}}
+@media(max-width:760px){
+ nav{padding:13px 5%}.menu{display:block}.navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:#071522;padding:20px 7%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:17px}.navlinks.open{display:flex}
+ .hero{grid-template-columns:1fr;padding:65px 7% 45px;min-height:auto}.hero-copy{order:1}.portrait-wrap{order:0;min-height:270px}.ring{width:235px}.tag-one{left:3%;top:12%}.tag-two{right:2%;bottom:12%}
+ section{padding:65px 7%}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,1fr)}h1{letter-spacing:-2px}
+}
+@media(max-width:440px){.grid,.achievements,.contact-grid{grid-template-columns:1fr}.edu{grid-template-columns:1fr;gap:5px}.hero{padding-top:42px}.float-tag{font-size:10px;padding:8px 10px}.section-head h2{font-size:32px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<div id="progress"></div>
 <nav>
-<div class="logo">Asghar<span>.</span></div>
-<div><a href="#about">About</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+<a class="brand" href="#home">AI<span>.</span></a>
+<button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+<div class="navlinks" id="navlinks">
+<a href="#about">About</a><a href="#education">Education</a><a href="#achievements">Achievements</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+</div>
 </nav>
-<header class="hero">
-<div class="tag">FUTURE PHYSICIAN · LIFELONG LEARNER</div>
-<h1>Asghar Ali<br><span>Medical Student.</span></h1>
-<p>Third-year MBBS student passionate about clinical learning, medical research, community health, and making a difference through medicine.</p>
-<div><a class="btn" href="#projects">Explore My Work ↗</a><a class="btn" href="#contact">Get in Touch</a></div>
+<header class="hero" id="home">
+<div class="orb"></div>
+<div class="hero-copy reveal">
+<div class="eyebrow">Medical Student · Research · Service</div>
+<h1>Dr. <span class="name">Asghar Ijaz</span></h1>
+<div class="role"><span id="typed">3rd Year MBBS Student</span></div>
+<p>Medical student at Bahria University Health Sciences Campus, Karachi, interested in medical learning, research, teamwork and community health initiatives.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore My Projects ↗</a><a class="btn" href="#contact">Get in Touch</a></div>
+</div>
+<div class="portrait-wrap reveal">
+<div class="ring"><div class="portrait">
+<img id="profileImage" src="profile.jpg" alt="Portrait of Asghar Ijaz" onerror="this.style.display='none';document.getElementById('photoPlaceholder').style.display='block'">
+<div id="photoPlaceholder" class="photo-placeholder"><div class="symbol">✚</div><strong>Asghar Ijaz</strong><small>Upload your photo as profile.jpg</small></div>
+</div></div>
+<div class="float-tag tag-one">✦ MBBS Student</div><div class="float-tag tag-two">♡ Research &amp; Service</div>
+</div>
 </header>
 <section id="about" class="reveal">
-<div class="tag">01 — ABOUT ME</div><h2>Driven by science.<br><span>Inspired by care.</span></h2>
-<p>I am a medical student building my knowledge through academics, research, and community service. My goal is to combine evidence-based medicine with compassion and lifelong learning.</p>
-<div class="grid">
-<div class="card"><div class="stat">MBBS</div><p>Medical education</p></div>
-<div class="card"><div class="stat">Research</div><p>Curiosity into discovery</p></div>
-<div class="card"><div class="stat">Service</div><p>Community health awareness</p></div>
+<div class="section-head"><div class="eyebrow">01 / About</div><h2>Learning with purpose.<br><span class="accent">Growing through service.</span></h2>
+<p>I'm a third-year MBBS student at Bahria University Health Sciences Campus, Karachi. My portfolio brings together my academic journey, student activities, certifications and project interests.</p></div>
+<div class="stats">
+<div class="stat"><strong>72%</strong><span>Academic percentage</span></div>
+<div class="stat"><strong>02</strong><span>Letters to the Editor</span></div>
+<div class="stat"><strong>500+</strong><span>Volunteer hours</span></div>
+<div class="stat"><strong>06</strong><span>Awards &amp; recognitions</span></div>
 </div>
 </section>
 <section id="education" class="reveal">
-<div class="tag">02 — EDUCATION</div><h2>My academic <span>journey.</span></h2>
-<div class="grid">
-<div class="card"><h3>MBBS</h3><p><strong>King Edward Medical University, Lahore</strong></p><p>2023 — Present</p><p>Medical sciences, clinical foundations, and patient-centred learning.</p></div>
-<div class="card"><h3>FSc Pre-Medical</h3><p><strong>Government College University, Lahore</strong></p><p>2021 — 2023</p><p>Score: 1080 / 1100</p></div>
-<div class="card"><h3>Matriculation</h3><p><strong>Crescent Model Higher Secondary School</strong></p><p>2019 — 2021</p><p>Score: 1085 / 1100</p></div>
+<div class="section-head"><div class="eyebrow">02 / Education</div><h2>Academic <span class="accent">journey.</span></h2><p>My education and academic milestones.</p></div>
+<div class="timeline">
+<div class="edu"><div class="year">2023 — Present</div><div><h3>Bahria University Health Sciences Campus, Karachi</h3><p>MBBS · Third Year</p></div></div>
+<div class="edu"><div class="year">2023</div><div><h3>NUMS MDCAT</h3><p>Score: 90%</p></div></div>
+<div class="edu"><div class="year">2021 — 2023</div><div><h3>BISE DG Khan</h3><p>FSc Pre-Medical · 90%</p></div></div>
+<div class="edu"><div class="year">2019 — 2021</div><div><h3>Superior Science Higher Secondary School, Muzaffargarh</h3><p>Matriculation · 1038 / 1100 marks</p></div></div>
 </div>
 </section>
-<section class="reveal">
-<div class="tag">03 — ACHIEVEMENTS</div><h2>Milestones &amp; <span>recognition.</span></h2>
-<div class="grid">
-<div class="card"><h3>🏅 Pathology</h3><p>Gold Medal</p></div>
-<div class="card"><h3>🎤 Research</h3><p>Best Oral Presentation</p></div>
-<div class="card"><h3>📚 Academics</h3><p>Dean's Honor List</p></div>
-<div class="card"><h3>🩺 Certification</h3><p>BLS Certification</p></div>
-<div class="card"><h3>🧠 Anatomy</h3><p>Quiz — First Place</p></div>
-<div class="card"><h3>⭐ Merit</h3><p>Merit Scholarship</p></div>
+<section id="achievements" class="reveal">
+<div class="section-head"><div class="eyebrow">03 / Achievements</div><h2>Milestones &amp; <span class="accent">certifications.</span></h2><p>Academic, professional development and student-community activities.</p></div>
+<div class="grid achievements">
+<div class="card"><div class="iconbox">♡</div><h3>Basic Life Support (BLS)</h3><p>Certification by Aga Khan University.</p></div>
+<div class="card"><div class="iconbox">✦</div><h3>SYNAPSE</h3><p>Participant at Dow Medical College.</p></div>
+<div class="card"><div class="iconbox">♧</div><h3>MSA Pakistan</h3><p>Vice President, BUHSC Local Council, 2026.</p></div>
+<div class="card"><div class="iconbox">◈</div><h3>Best Oral Presentation</h3><p>Presentation recognition.</p></div>
+<div class="card"><div class="iconbox">⚑</div><h3>Sports</h3><p>Active sportsman.</p></div>
+<div class="card"><div class="iconbox">✚</div><h3>National Quiz Competition</h3><p>Represented BUHSC in Pakistan's first national quiz competition.</p></div>
+<div class="card"><div class="iconbox">◎</div><h3>THRO TALKS 2K26</h3><p>Certification related to conducting “Advancing Awareness, Diagnosis &amp; Care” via MSA Pakistan.</p></div>
+<div class="card"><div class="iconbox">☾</div><h3>Ramadan Drives</h3><p>Active participant in CSP-BUHSC drives.</p></div>
+<div class="card"><div class="iconbox">★</div><h3>Merit-Based Admission</h3><p>Admission to BUHSC with 89.96% merit.</p></div>
 </div>
 </section>
 <section id="projects" class="reveal">
-<div class="tag">04 — SELECTED WORK</div><h2>Projects with <span>purpose.</span></h2>
+<div class="section-head"><div class="eyebrow">04 / Selected Work</div><h2>Projects &amp; <span class="accent">interests.</span></h2><p>Selected projects and initiatives. Additional details can be added as project information becomes available.</p></div>
 <div class="grid">
-<div class="card"><h3>Anemia Study</h3><p>Exploring anemia awareness and related health factors.</p></div>
-<div class="card"><h3>Hypertension Screening</h3><p>Community screening and blood-pressure awareness.</p></div>
-<div class="card"><h3>Antibiotic Awareness</h3><p>Surveying awareness of appropriate antibiotic use.</p></div>
-<div class="card"><h3>MedNotes</h3><p>A concept for simple, student-friendly medical study notes.</p></div>
+<div class="card project-card"><div class="iconbox">⌕</div><h3>Anemia Study</h3><p>Medical study project. Further details to be added.</p><div class="more">RESEARCH INTEREST</div></div>
+<div class="card project-card"><div class="iconbox">♥</div><h3>Hypertension Screening Camp</h3><p>Community health screening initiative. Further details to be added.</p><div class="more">COMMUNITY HEALTH</div></div>
+<div class="card project-card"><div class="iconbox">✚</div><h3>Antibiotic Awareness Survey</h3><p>Survey project focused on antibiotic awareness. Further details to be added.</p><div class="more">MEDICAL AWARENESS</div></div>
+<div class="card project-card"><div class="iconbox">▤</div><h3>MedNotes</h3><p>Medical notes project. Further details to be added.</p><div class="more">MEDICAL EDUCATION</div></div>
 </div>
 </section>
 <section id="contact" class="reveal">
-<div class="tag">05 — CONTACT</div><h2>Let's connect<span>.</span></h2>
-<p>Interested in medical research, student initiatives, or community health projects? Feel free to reach out.</p>
-<p>Email: <a style="color:var(--teal)" href="mailto:asghar.ali@example.com">asghar.ali@example.com</a></p>
-<p>Location: Lahore, Pakistan</p>
-<p><small>Before publishing, verify all academic details and replace the example email with your real email address.</small></p>
+<div class="section-head"><div class="eyebrow">05 / Contact</div><h2>Let's connect<span class="accent">.</span></h2><p>For medical student initiatives, academic collaboration and research-related communication.</p></div>
+<div class="contact-grid">
+<div class="card"><div class="iconbox">✉</div><h3>Email</h3><p><a class="contact-link" href="mailto:asgharsanjrani17@gmail.com">asgharsanjrani17@gmail.com</a></p></div>
+<div class="card"><div class="iconbox">☎</div><h3>Phone</h3><p><a class="contact-link" href="tel:+923705752156">+92 370 5752156</a></p></div>
+<div class="card"><div class="iconbox">⌖</div><h3>Location</h3><p>Muzaffargarh &amp; Karachi, Pakistan</p></div>
+<div class="card"><div class="iconbox">⌂</div><h3>Campus</h3><p>Bahria University Health Sciences Campus, adjacent to PNS Shifa, DHA Phase 2, Karachi.</p></div>
+</div>
+<p style="color:var(--muted);font-size:12px;margin-top:20px">Please verify all personal, academic and contact details before sharing this portfolio publicly.</p>
 </section>
-<footer>© 2026 Asghar Ali · Medical Student Portfolio</footer>
+<footer>© <span id="year"></span> Asghar Ijaz · Medical Student Portfolio<br>Built with curiosity, care and a commitment to learning.</footer>
 <script>
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const menu=document.getElementById('menu');
+const links=document.getElementById('navlinks');
+menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'✕':'☰'});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const progress=document.getElementById('progress');
+window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(max>0?window.scrollY/max*100:0)+'%'},{passive:true});
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'))}
 </script>
 </body>
 </html>
