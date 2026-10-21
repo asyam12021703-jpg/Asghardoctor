@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asghar Ali | Medical Portfolio</title>
+<style>
+:root{--navy:#071b33;--teal:#27d3bd;--white:#f4f8fc}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:var(--navy);color:var(--white);line-height:1.7}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;position:sticky;top:0;background:#071b33ee;backdrop-filter:blur(12px);z-index:5}
+.logo{font-size:22px;font-weight:bold;color:var(--teal)}
+nav a{color:white;text-decoration:none;margin-left:15px;font-size:14px}
+.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;padding:70px 10%;background:radial-gradient(circle at 85% 25%,#14565d 0,transparent 35%)}
+.tag{color:var(--teal);letter-spacing:3px;font-size:13px}
+h1{font-size:clamp(42px,8vw,76px);line-height:1.12;margin:18px 0}
+h1 span,h2 span{color:var(--teal)}
+p{color:#c5d3e3}
+.hero p{max-width:600px;font-size:18px}
+.btn{display:inline-block;background:var(--teal);color:var(--navy);padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:bold;margin:12px 8px 0 0}
+section{padding:70px 10%}
+h2{font-size:34px;margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{padding:23px;border:1px solid #28435a;border-radius:15px;background:#102943;transition:.3s}
+.card:hover{transform:translateY(-7px);border-color:var(--teal)}
+.card h3{color:var(--teal);margin-top:0}
+.stat{font-size:28px;font-weight:bold;color:var(--teal)}
+footer{text-align:center;padding:30px;border-top:1px solid #28435a;color:#c5d3e3}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.reveal.show{opacity:1;transform:translateY(0)}
+@media(max-width:600px){nav{padding:16px 5%;flex-wrap:wrap;gap:10px}nav a{margin-left:8px;font-size:12px}.hero,section{padding:55px 7%}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">Asghar<span>.</span></div>
+<div><a href="#about">About</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+</nav>
+<header class="hero">
+<div class="tag">FUTURE PHYSICIAN · LIFELONG LEARNER</div>
+<h1>Asghar Ali<br><span>Medical Student.</span></h1>
+<p>Third-year MBBS student passionate about clinical learning, medical research, community health, and making a difference through medicine.</p>
+<div><a class="btn" href="#projects">Explore My Work ↗</a><a class="btn" href="#contact">Get in Touch</a></div>
+</header>
+<section id="about" class="reveal">
+<div class="tag">01 — ABOUT ME</div><h2>Driven by science.<br><span>Inspired by care.</span></h2>
+<p>I am a medical student building my knowledge through academics, research, and community service. My goal is to combine evidence-based medicine with compassion and lifelong learning.</p>
+<div class="grid">
+<div class="card"><div class="stat">MBBS</div><p>Medical education</p></div>
+<div class="card"><div class="stat">Research</div><p>Curiosity into discovery</p></div>
+<div class="card"><div class="stat">Service</div><p>Community health awareness</p></div>
+</div>
+</section>
+<section id="education" class="reveal">
+<div class="tag">02 — EDUCATION</div><h2>My academic <span>journey.</span></h2>
+<div class="grid">
+<div class="card"><h3>MBBS</h3><p><strong>King Edward Medical University, Lahore</strong></p><p>2023 — Present</p><p>Medical sciences, clinical foundations, and patient-centred learning.</p></div>
+<div class="card"><h3>FSc Pre-Medical</h3><p><strong>Government College University, Lahore</strong></p><p>2021 — 2023</p><p>Score: 1080 / 1100</p></div>
+<div class="card"><h3>Matriculation</h3><p><strong>Crescent Model Higher Secondary School</strong></p><p>2019 — 2021</p><p>Score: 1085 / 1100</p></div>
+</div>
+</section>
+<section class="reveal">
+<div class="tag">03 — ACHIEVEMENTS</div><h2>Milestones &amp; <span>recognition.</span></h2>
+<div class="grid">
+<div class="card"><h3>🏅 Pathology</h3><p>Gold Medal</p></div>
+<div class="card"><h3>🎤 Research</h3><p>Best Oral Presentation</p></div>
+<div class="card"><h3>📚 Academics</h3><p>Dean's Honor List</p></div>
+<div class="card"><h3>🩺 Certification</h3><p>BLS Certification</p></div>
+<div class="card"><h3>🧠 Anatomy</h3><p>Quiz — First Place</p></div>
+<div class="card"><h3>⭐ Merit</h3><p>Merit Scholarship</p></div>
+</div>
+</section>
+<section id="projects" class="reveal">
+<div class="tag">04 — SELECTED WORK</div><h2>Projects with <span>purpose.</span></h2>
+<div class="grid">
+<div class="card"><h3>Anemia Study</h3><p>Exploring anemia awareness and related health factors.</p></div>
+<div class="card"><h3>Hypertension Screening</h3><p>Community screening and blood-pressure awareness.</p></div>
+<div class="card"><h3>Antibiotic Awareness</h3><p>Surveying awareness of appropriate antibiotic use.</p></div>
+<div class="card"><h3>MedNotes</h3><p>A concept for simple, student-friendly medical study notes.</p></div>
+</div>
+</section>
+<section id="contact" class="reveal">
+<div class="tag">05 — CONTACT</div><h2>Let's connect<span>.</span></h2>
+<p>Interested in medical research, student initiatives, or community health projects? Feel free to reach out.</p>
+<p>Email: <a style="color:var(--teal)" href="mailto:asghar.ali@example.com">asghar.ali@example.com</a></p>
+<p>Location: Lahore, Pakistan</p>
+<p><small>Before publishing, verify all academic details and replace the example email with your real email address.</small></p>
+</section>
+<footer>© 2026 Asghar Ali · Medical Student Portfolio</footer>
+<script>
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
