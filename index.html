@@ -43,12 +43,12 @@ nav{position:fixed;z-index:100;top:0;left:0;width:100%;background:rgba(8,13,24,.
 .floating-label strong{display:block;color:var(--gold);font-size:.9rem}.floating-label span{font-size:.74rem;color:var(--muted)}
 @keyframes orbit{to{transform:rotate(360deg)}}@keyframes pulse{50%{opacity:.55;transform:scale(1.08)}}
 .intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#080d18;transition:opacity .8s ease,visibility .8s ease}
-.intro.hide{opacity:0;visibility:hidden;pointer-events:none}.intro-content{text-align:center;padding:24px}
+.intro.hide{opacity:0;visibility:hidden;pointer-events:none}.intro-content{text-align:center;padding:24px;display:flex;flex-direction:column;align-items:center}.intro-photo{width:clamp(120px,28vw,190px);height:clamp(120px,28vw,190px);object-fit:contain;border-radius:50%;border:2px solid var(--gold);padding:5px;background:#101a2b;box-shadow:0 0 38px #f5cc7240;animation:photoPop .9s cubic-bezier(.18,.89,.32,1.28) both}.intro-name{margin-top:18px;animation:markIn .9s .15s ease both}.intro-mark{display:none}
 .intro-mark{width:78px;height:78px;margin:0 auto 23px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:24px;color:var(--gold);font-size:1.8rem;font-weight:900;animation:markIn 1s ease both,markGlow 2s 1s infinite alternate}
 .intro-name{font-size:clamp(1.6rem,5vw,2.6rem);font-weight:850;letter-spacing:1px}.intro-name span{color:var(--gold)}
 .intro-sub{font-size:.75rem;letter-spacing:3px;color:var(--muted);margin-top:9px}.intro-line{width:180px;height:2px;background:#26364a;margin:25px auto;overflow:hidden}
 .intro-line::after{content:"";display:block;width:45%;height:100%;background:var(--gold);animation:loading 1.4s ease-in-out infinite}
-@keyframes markIn{from{opacity:0;transform:translateY(20px) rotate(-12deg)}to{opacity:1;transform:none}}@keyframes markGlow{to{box-shadow:0 0 35px #f5cc7230}}@keyframes loading{from{transform:translateX(-110%)}to{transform:translateX(340%)}}
+@keyframes photoPop{from{opacity:0;transform:scale(.35) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}@keyframes markIn{from{opacity:0;transform:translateY(20px) rotate(-12deg)}to{opacity:1;transform:none}}@keyframes markGlow{to{box-shadow:0 0 35px #f5cc7230}}@keyframes loading{from{transform:translateX(-110%)}to{transform:translateX(340%)}}
 .card{background:linear-gradient(145deg,rgba(20,34,56,.88),rgba(13,23,39,.92));border:1px solid rgba(255,255,255,.075);border-radius:20px;padding:26px;transition:transform .3s,border-color .3s,box-shadow .3s}
 .card:hover{transform:translateY(-5px);border-color:var(--line);box-shadow:0 18px 45px rgba(0,0,0,.2)}
 .card h3{font-size:1.08rem;margin:9px 0}.card p{color:var(--muted);font-size:.91rem}
@@ -62,9 +62,9 @@ nav{position:fixed;z-index:100;top:0;left:0;width:100%;background:rgba(8,13,24,.
 .timeline-card .date{font-size:.78rem;color:var(--gold);font-weight:750}.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
 .tag{padding:7px 11px;border:1px solid var(--line);border-radius:100px;color:#e8d6a9;font-size:.77rem;background:#f5cc7208}
 .second-photo-section{text-align:center}.second-photo-card{max-width:760px;margin:0 auto;padding:35px;background:linear-gradient(145deg,#142238,#0c1524);border:1px solid var(--line);border-radius:26px;overflow:hidden}
-.second-photo-frame{width:min(310px,75vw);aspect-ratio:4/5;margin:0 auto 27px;padding:5px;position:relative;border-radius:160px 160px 28px 28px;background:linear-gradient(150deg,var(--gold2),#796032,#203a5c,var(--gold));background-size:300% 300%;animation:gradientFlow 7s ease infinite;box-shadow:0 0 40px #f5cc7214,0 25px 70px #0005}
-.second-photo-frame::before{content:"";position:absolute;inset:-9px;border:1px solid #f5cc7255;border-radius:170px 170px 35px 35px;pointer-events:none}
-.second-photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:155px 155px 24px 24px;background:#17243a}
+.second-photo-frame{width:100%;margin:0 auto 27px;padding:0;position:relative;background:transparent;box-shadow:none;border:0;border-radius:0;animation:none}
+.second-photo-frame::before{display:none}
+.second-photo-frame img{width:auto;height:auto;max-width:100%;max-height:75vh;object-fit:contain;border-radius:0;background:transparent;margin:0 auto}
 @keyframes gradientFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 .second-photo-card p{color:var(--muted);max-width:540px;margin:10px auto 0}.second-photo-card h3{font-size:1.35rem}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-item{display:flex;align-items:flex-start;gap:15px}.contact-item .card-icon{flex-shrink:0}.contact-item p{overflow-wrap:anywhere}
@@ -81,8 +81,8 @@ footer{border-top:1px solid #ffffff10;padding:27px 0;color:var(--muted);font-siz
 <div class="progress" id="progress"></div>
 <div class="intro" id="intro" aria-label="Welcome animation">
   <div class="intro-content">
-    <div class="intro-mark">MA</div>
-    <div class="intro-name">MUHAMMAD <span>ASGHAR</span></div>
+    <img class="intro-photo" src="IMG_20261021_221125.jpg" alt="Dr. Muhammad Asghar Ijaz" onerror="this.onerror=null;this.src='profile.jpg';">
+    <div class="intro-name">Dr. Muhammad <span>Asghar Ijaz</span></div>
     <div class="intro-sub">MEDICAL STUDENT PORTFOLIO</div>
     <div class="intro-line"></div>
   </div>
@@ -101,7 +101,7 @@ footer{border-top:1px solid #ffffff10;padding:27px 0;color:var(--muted);font-siz
   <div class="container hero-grid">
     <div class="hero-copy reveal">
       <div class="hero-tag">MEDICAL STUDENT · KARACHI, PAKISTAN</div>
-      <h1>Dr. Muhammad <span>Asghar</span></h1>
+      <h1>Dr. Muhammad <span>Asghar Ijaz</span></h1>
       <p class="hero-role">3rd Year MBBS Student</p>
       <p class="hero-description">A medical student at Bahria University Health Sciences Campus, Karachi, passionate about clinical learning, research, community health and making a meaningful difference through medicine.</p>
       <div class="hero-buttons"><a class="btn btn-primary" href="#about">Explore My Portfolio ↗</a><a class="btn btn-secondary" href="#contact">Get in Touch</a></div>
@@ -180,7 +180,9 @@ footer{border-top:1px solid #ffffff10;padding:27px 0;color:var(--muted);font-siz
     <div class="section-heading reveal"><div class="eyebrow">Let's connect</div><h2 class="section-title">Open to meaningful <span class="gold">connections.</span></h2><p class="section-desc">For academic collaborations, research discussions, medical student initiatives and community health activities.</p></div>
     <div class="contact-grid">
       <div class="card contact-item reveal"><div class="card-icon">⌖</div><div><h3>Location</h3><p>Bahria University Health Sciences Campus, adjacent to PNS Shifa, DHA Phase 2, Karachi, Pakistan.</p></div></div>
-      <div class="card contact-item reveal delay-1"><div class="card-icon">✉</div><div><h3>Professional Interests</h3><p>Medical research, student leadership, health awareness and community service.</p></div></div>
+      <div class="card contact-item reveal delay-1"><div class="card-icon">✉</div><div><h3>Email</h3><p><a href="mailto:asgharsanjrani17@gmail.com">asgharsanjrani17@gmail.com</a></p></div></div>
+      <div class="card contact-item reveal"><div class="card-icon">☎</div><div><h3>Phone</h3><p><a href="tel:+923705752156">+92 370 5752156</a></p></div></div>
+      <div class="card contact-item reveal delay-1"><div class="card-icon">✦</div><div><h3>Professional Interests</h3><p>Medical research, student leadership, health awareness and community service.</p></div></div>
     </div>
   </div>
 </section>
